@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JSONKit — Swiss Army Knife for JSON | Python CLI Tool</title>
+<meta name="description" content="Format, validate, query, diff, flatten, and convert JSON from the command line. Zero dependencies, Python 3.10+. Free and open source.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://vesper-astrena.github.io/devtools/jsonkit.html">
+<meta property="og:type" content="product">
+<meta property="og:title" content="JSONKit — Swiss Army Knife for JSON">
+<meta property="og:description" content="Format, validate, query, diff, flatten, and convert JSON from the command line. Python CLI tool.">
+<meta property="og:url" content="https://vesper-astrena.github.io/devtools/jsonkit.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSONKit — Swiss Army Knife for JSON">
+<meta name="twitter:description" content="Python CLI that handles all your JSON tasks. Free & open source.">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"JSONKit",
+  "applicationCategory":"DeveloperApplication",
+  "operatingSystem":"Windows, macOS, Linux",
+  "offers":[
+    {"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free open-source edition","url":"https://github.com/vesper-astrena/jsonkit"},
+    {"@type":"Offer","price":"19","priceCurrency":"USD","description":"Pro edition with advanced features","url":"https://vesperfinch.gumroad.com/l/jsonkit"}
+  ],
+  "author":{"@type":"Organization","name":"Vesper Finch"},
+  "description":"Swiss Army knife for JSON. Format, validate, query, diff, flatten, convert — all from one command."
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">Vesper<span>Finch</span></a>
+    <nav>
+      <a href="csv-cleaner.html">CSV Cleaner</a>
+      <a href="jsonkit.html">JSONKit</a>
+      <a href="promptlab.html">PromptLab</a>
+      <a href="polymarket-scanner.html">Polymarket Scanner</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">JSON Tools</span>
+    <h1>One Tool for<br>All Your JSON Tasks</h1>
+    <p class="subtitle">Format, validate, query, diff, flatten, convert. Zero dependencies. One Python file. Works with pipes.</p>
+    <div class="btn-group">
+      <a href="https://github.com/vesper-astrena/jsonkit" class="btn btn-outline">Get it Free on GitHub</a>
+      <a href="https://vesperfinch.gumroad.com/l/jsonkit" class="btn btn-green">Get Pro &mdash; $19</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>10 Commands, One Tool</h2>
+      <p>Every JSON operation you need, without learning jq syntax or installing anything.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <h4>Format &amp; Minify</h4>
+        <p>Pretty-print with syntax highlighting, or strip all whitespace for production.</p>
+      </div>
+      <div class="feature">
+        <h4>Validate</h4>
+        <p>Check if JSON is valid. Shows exact line and column of errors.</p>
+      </div>
+      <div class="feature">
+        <h4>Query</h4>
+        <p>Extract values with dot notation: <code>users[0].name</code>. No jq syntax to learn.</p>
+      </div>
+      <div class="feature">
+        <h4>Diff</h4>
+        <p>Compare two JSON files. See additions, removals, and changes instantly.</p>
+      </div>
+      <div class="feature">
+        <h4>Flatten / Unflatten</h4>
+        <p>Convert nested JSON to flat dot-notation keys and back. Great for config files.</p>
+      </div>
+      <div class="feature">
+        <h4>CSV Convert</h4>
+        <p>JSON arrays to CSV and back. No pandas, no scripts — one command.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header">
+      <h2>See It in Action</h2>
+    </div>
+
+    <div class="code-block">
+      <span class="prompt">$</span> <span class="cmd">python jsonkit.py diff staging.json prod.json</span><br>
+      <span class="out">~ $.users[0].email:</span><br>
+      <span class="out">&nbsp;&nbsp;&nbsp;&nbsp;old: "test@staging.com"</span><br>
+      <span class="out">&nbsp;&nbsp;&nbsp;&nbsp;new: "real@company.com"</span><br>
+      <span class="out">+ $.users[3]: {"name": "New User"}</span><br>
+      <span class="out">- $.debug_info</span>
+    </div>
+
+    <br>
+
+    <div class="code-block">
+      <span class="prompt">$</span> <span class="cmd">python jsonkit.py stats api_response.json</span><br>
+      <span class="out">JSON Structure Stats</span><br>
+      <span class="out">&nbsp;&nbsp;Size: 2.3 MB &middot; Depth: 4 &middot; Keys: 18,705</span><br>
+      <span class="out">&nbsp;&nbsp;Types: string (8,241) integer (6,235) null (404)</span>
+    </div>
+
+    <br>
+
+    <div class="code-block">
+      <span class="prompt">$</span> <span class="cmd">curl -s api.example.com/data | python jsonkit.py query - "results[0].name"</span><br>
+      <span class="out">Alice Johnson</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Free vs Pro</h2>
+      <p>The free version covers daily JSON tasks. Pro adds schema tools, type generation, and bulk processing.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>Free</th><th>Pro ($19)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Format / minify / sort keys</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Validate with error location</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Dot-notation query</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Diff two files</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Flatten / unflatten</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>JSON &harr; CSV</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Structure stats</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>JSONPath queries ($.store.book[*])</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Schema generation &amp; validation</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Type generation (Python/TS/Go)</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Deep merge with conflict resolution</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>JSON Patch (RFC 6902)</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Bulk directory processing</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>JSON &harr; YAML</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>HTML structure reports</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Stop switching between 5 different JSON tools</h2>
+      <p>One file. Zero dependencies. All the JSON operations you need.</p>
+      <div class="btn-group">
+        <a href="https://github.com/vesper-astrena/jsonkit" class="btn btn-primary">Free on GitHub</a>
+        <a href="https://vesperfinch.gumroad.com/l/jsonkit" class="btn btn-outline">Get Pro &mdash; $19</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Built by <a href="https://github.com/vesper-astrena">Vesper Finch</a> &middot; <a href="index.html">All Tools</a> &middot; <a href="csv-cleaner.html">CSV Cleaner</a> &middot; <a href="promptlab.html">PromptLab</a> &middot; <a href="polymarket-scanner.html">Polymarket Scanner</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

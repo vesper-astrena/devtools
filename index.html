@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Developer Tools by Vesper Finch — Python CLI Tools for Data, Markets, and AI</title>
-<meta name="description" content="Open-source Python CLI tools for cleaning CSV data, testing LLM prompts, and scanning prediction markets. Free to use, Pro editions available.">
+<title>Developer Tools by Vesper Finch — Python CLI Tools for Data, JSON, Markets, and AI</title>
+<meta name="description" content="Open-source Python CLI tools for cleaning CSV data, working with JSON, testing LLM prompts, and scanning prediction markets. Free to use, Pro editions available.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://tools.vesperfinch.com/">
 <meta property="og:type" content="website">
@@ -33,6 +33,7 @@
     <a href="index.html" class="logo">Vesper<span>Finch</span></a>
     <nav>
       <a href="csv-cleaner.html">CSV Cleaner</a>
+      <a href="jsonkit.html">JSONKit</a>
       <a href="promptlab.html">PromptLab</a>
       <a href="polymarket-scanner.html">Polymarket Scanner</a>
     </nav>
@@ -42,7 +43,7 @@
 <section class="hero">
   <div class="container">
     <h1>Python CLI Tools That<br>Solve Real Problems</h1>
-    <p class="subtitle">Three focused tools for data wrangling, prompt engineering, and market intelligence. Open source. Install in seconds. Pro editions for power users.</p>
+    <p class="subtitle">Four focused tools for data wrangling, JSON processing, prompt engineering, and market intelligence. Open source. Install in seconds. Pro editions for power users.</p>
     <div class="btn-group">
       <a href="https://github.com/vesper-astrena" class="btn btn-outline">View on GitHub</a>
       <a href="https://vesperfinch.gumroad.com" class="btn btn-primary">Get Pro Editions</a>
@@ -72,6 +73,22 @@
           <a href="csv-cleaner.html" class="btn btn-primary" style="padding:.5rem 1.2rem;font-size:.85rem">Learn more</a>
           <a href="https://github.com/vesper-astrena/csv-cleaner" class="btn btn-outline" style="padding:.5rem 1.2rem;font-size:.85rem">GitHub (Free)</a>
           <a href="https://vesperfinch.gumroad.com/l/zgnbf" class="btn btn-green" style="padding:.5rem 1.2rem;font-size:.85rem">Pro $19</a>
+        </div>
+      </div>
+
+      <!-- JSONKit -->
+      <div class="card">
+        <span class="badge">JSON</span>
+        <h3>JSONKit</h3>
+        <p>Swiss Army knife for JSON. Format, validate, query, diff, flatten, and convert — all from one command. Works with pipes and stdin.</p>
+        <div class="code-block">
+          <span class="prompt">$</span> <span class="cmd">python jsonkit.py diff old.json new.json</span><br>
+          <span class="out">~ $.email: changed &middot; + $.role &middot; 2 differences</span>
+        </div>
+        <div class="btn-group" style="justify-content:flex-start">
+          <a href="jsonkit.html" class="btn btn-primary" style="padding:.5rem 1.2rem;font-size:.85rem">Learn more</a>
+          <a href="https://github.com/vesper-astrena/jsonkit" class="btn btn-outline" style="padding:.5rem 1.2rem;font-size:.85rem">GitHub (Free)</a>
+          <a href="https://vesperfinch.gumroad.com/l/jsonkit" class="btn btn-green" style="padding:.5rem 1.2rem;font-size:.85rem">Pro $19</a>
         </div>
       </div>
 
@@ -152,7 +169,7 @@
 
 <footer>
   <div class="container">
-    <p>Built by <a href="https://github.com/vesper-astrena">Vesper Finch</a> &middot; <a href="csv-cleaner.html">CSV Cleaner</a> &middot; <a href="promptlab.html">PromptLab</a> &middot; <a href="polymarket-scanner.html">Polymarket Scanner</a></p>
+    <p>Built by <a href="https://github.com/vesper-astrena">Vesper Finch</a> &middot; <a href="csv-cleaner.html">CSV Cleaner</a> &middot; <a href="jsonkit.html">JSONKit</a> &middot; <a href="promptlab.html">PromptLab</a> &middot; <a href="polymarket-scanner.html">Polymarket Scanner</a></p>
   </div>
 </footer>
 
