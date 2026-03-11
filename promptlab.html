@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PromptLab — Test and Compare LLM Prompts | Python CLI</title>
+<meta name="description" content="PromptLab lets you test, compare, and version LLM prompts from the command line. Run A/B tests across GPT-4, Claude, and Gemini. Track regressions before they hit production.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://tools.vesperfinch.com/promptlab.html">
+<meta property="og:type" content="product">
+<meta property="og:title" content="PromptLab — Test and Compare LLM Prompts">
+<meta property="og:description" content="Test, compare, and version your LLM prompts from the CLI. Run A/B tests across models and catch regressions.">
+<meta property="og:url" content="https://tools.vesperfinch.com/promptlab.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PromptLab — Test and Compare LLM Prompts">
+<meta name="twitter:description" content="Python CLI for prompt engineering. Test across models, track costs, ship with confidence.">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"PromptLab",
+  "applicationCategory":"DeveloperApplication",
+  "operatingSystem":"Windows, macOS, Linux",
+  "offers":[
+    {"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free open-source edition","url":"https://github.com/vesper-astrena/promptlab"},
+    {"@type":"Offer","price":"24","priceCurrency":"USD","description":"Pro edition with advanced features","url":"https://vesperfinch.gumroad.com/l/qopfk"}
+  ],
+  "author":{"@type":"Organization","name":"Vesper Finch"},
+  "description":"Test, compare, and version LLM prompts from the command line. Run A/B tests across GPT-4, Claude, and Gemini."
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">Vesper<span>Finch</span></a>
+    <nav>
+      <a href="csv-cleaner.html">CSV Cleaner</a>
+      <a href="promptlab.html">PromptLab</a>
+      <a href="polymarket-scanner.html">Polymarket Scanner</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">AI / LLM</span>
+    <h1>Test Your Prompts<br>Before Production Breaks</h1>
+    <p class="subtitle">PromptLab gives you a testing framework for LLM prompts. Compare outputs across models, catch regressions, and ship with confidence.</p>
+    <div class="btn-group">
+      <a href="https://github.com/vesper-astrena/promptlab" class="btn btn-outline">Get it Free on GitHub</a>
+      <a href="https://vesperfinch.gumroad.com/l/qopfk" class="btn btn-green">Get Pro &mdash; $24</a>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Untested Prompts Are Technical Debt</h2>
+      <p>You wouldn't ship code without tests. But most teams push prompt changes to production with nothing but a gut check and a prayer.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <h4>Multi-Model Testing</h4>
+        <p>Run the same prompt against GPT-4o, Claude, Gemini, Llama, and more. See how each model handles your edge cases.</p>
+      </div>
+      <div class="feature">
+        <h4>Regression Detection</h4>
+        <p>Define expected outputs. PromptLab flags when a prompt change causes unexpected behavior across your test suite.</p>
+      </div>
+      <div class="feature">
+        <h4>Cost Tracking</h4>
+        <p>See token usage and estimated cost for every test run. Compare cost/quality tradeoffs between models.</p>
+      </div>
+      <div class="feature">
+        <h4>Version History</h4>
+        <p>Every prompt change is tracked with its test results. Roll back to any previous version instantly.</p>
+      </div>
+      <div class="feature">
+        <h4>Template Library</h4>
+        <p>Start from battle-tested templates for classification, extraction, summarization, code generation, and more.</p>
+      </div>
+      <div class="feature">
+        <h4>CI/CD Ready</h4>
+        <p>Run prompt tests in your pipeline. Fail the build if quality drops below your threshold.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo -->
+<section style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header">
+      <h2>See It in Action</h2>
+      <p>Define a test, run it, compare results. Three commands.</p>
+    </div>
+
+    <div class="code-block">
+      <span class="comment"># Define a prompt test</span><br>
+      <span class="prompt">$</span> <span class="cmd">promptlab init sentiment-classifier</span><br>
+      <span class="out">Created: sentiment-classifier/</span><br>
+      <span class="out">&nbsp; prompt.txt &middot; tests.yaml &middot; config.yaml</span><br><br>
+
+      <span class="comment"># Run tests across two models</span><br>
+      <span class="prompt">$</span> <span class="cmd">promptlab test sentiment-classifier/ --models gpt-4o,claude-sonnet</span><br>
+      <span class="out">Running 12 test cases across 2 models...</span><br><br>
+
+      <span class="out">Model: gpt-4o</span><br>
+      <span class="out">&nbsp; Passed: 11/12 (91.7%)</span><br>
+      <span class="out">&nbsp; Failed: "sarcasm-edge-case" — expected: negative, got: positive</span><br>
+      <span class="out">&nbsp; Tokens: 3,841 &middot; Cost: $0.019</span><br><br>
+
+      <span class="out">Model: claude-sonnet</span><br>
+      <span class="out">&nbsp; Passed: 12/12 (100%)</span><br>
+      <span class="out">&nbsp; Tokens: 3,212 &middot; Cost: $0.010</span><br><br>
+
+      <span class="comment"># Compare with previous version</span><br>
+      <span class="prompt">$</span> <span class="cmd">promptlab diff sentiment-classifier/ --last</span><br>
+      <span class="out">v2 vs v1: +1 pass (gpt-4o), 0 regressions</span><br>
+      <span class="out">Cost delta: -$0.003/run (prompt shortened by 40 tokens)</span>
+    </div>
+  </div>
+</section>
+
+<!-- Template Library Preview -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Template Library</h2>
+      <p>Don't start from scratch. Pick a template, customize it, test it.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="badge">Classification</span>
+        <h3>Sentiment Analysis</h3>
+        <p>Multi-class sentiment with confidence scores. Handles sarcasm, mixed sentiment, and multilingual input.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Extraction</span>
+        <h3>Entity Extraction</h3>
+        <p>Pull structured data from unstructured text. Names, dates, amounts, addresses with JSON output.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Generation</span>
+        <h3>Code Generation</h3>
+        <p>Generate functions with docstrings, type hints, and test cases. Python, TypeScript, Go templates included.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Summarization</span>
+        <h3>Document Summary</h3>
+        <p>Configurable length and style. Extractive, abstractive, and bullet-point formats with key-point highlighting.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Q&amp;A</span>
+        <h3>RAG Pipeline</h3>
+        <p>Question-answering over retrieved context. Includes hallucination detection and source attribution prompts.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Agents</span>
+        <h3>Tool-Use Agent</h3>
+        <p>Agent prompts with function calling. Includes routing logic, error handling, and multi-step reasoning templates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Table -->
+<section style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header">
+      <h2>Free vs Pro</h2>
+      <p>Free gives you a complete testing workflow. Pro adds scale and team features.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>Free</th><th>Pro ($24)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Multi-model testing</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Test suite definition (YAML)</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Regression detection</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Cost tracking</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Basic templates (3)</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+          <tr><td>Version history</td><td class="check">Up to 5</td><td class="check">Unlimited</td></tr>
+          <tr><td>Full template library (15+)</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Parallel test execution</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>HTML report generation</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Custom evaluation functions</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>CI/CD integration (GitHub Actions)</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Prompt optimization suggestions</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+          <tr><td>Priority support</td><td class="cross">&mdash;</td><td class="check">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ship prompts like you ship code</h2>
+      <p>Test first. Measure always. One-time purchase, no subscription.</p>
+      <div class="btn-group">
+        <a href="https://github.com/vesper-astrena/promptlab" class="btn btn-primary">Free on GitHub</a>
+        <a href="https://vesperfinch.gumroad.com/l/qopfk" class="btn btn-outline">Get Pro &mdash; $24</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Built by <a href="https://github.com/vesper-astrena">Vesper Finch</a> &middot; <a href="index.html">All Tools</a> &middot; <a href="csv-cleaner.html">CSV Cleaner</a> &middot; <a href="polymarket-scanner.html">Polymarket Scanner</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
