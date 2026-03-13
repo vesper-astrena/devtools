@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vesper Tools — Free Blender Addons</title>
+    <meta name="description" content="3 free open-source Blender addons: Scene Cleaner Pro, Batch Renamer Pro, Material Manager Pro. One-click cleanup, bulk renaming, material management.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
+        .subtitle { color: #888; font-size: 1.2rem; margin-bottom: 3rem; }
+        .addon { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+        .addon h2 { color: #4fc3f7; margin-bottom: 0.5rem; font-size: 1.5rem; }
+        .addon p { color: #aaa; margin-bottom: 1rem; }
+        .features { list-style: none; margin-bottom: 1.5rem; }
+        .features li { padding: 0.3rem 0; }
+        .features li::before { content: "✓ "; color: #4caf50; font-weight: bold; }
+        .links { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .links a { display: inline-block; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .btn-github { background: #333; color: #fff; border: 1px solid #555; }
+        .btn-github:hover { background: #444; }
+        .btn-gumroad { background: #ff90e8; color: #000; }
+        .btn-gumroad:hover { background: #ff70d8; }
+        .bundle { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid #4fc3f7; }
+        .bundle h2 { color: #fff; }
+        .price { font-size: 1.3rem; color: #4caf50; font-weight: bold; margin: 1rem 0; }
+        .price s { color: #666; font-size: 1rem; }
+        footer { text-align: center; color: #555; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #222; }
+        footer a { color: #4fc3f7; text-decoration: none; }
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .container { padding: 1rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vesper Tools for Blender</h1>
+        <p class="subtitle">3 free, open-source addons to clean up your workflow. Single Python files, no dependencies.</p>
+
+        <div class="addon">
+            <h2>Scene Cleaner Pro</h2>
+            <p>One-click scene cleanup — stop wasting time on manual housekeeping.</p>
+            <ul class="features">
+                <li>Purge ALL unused datablocks across 24+ categories</li>
+                <li>Remove empty collections (recursive check)</li>
+                <li>Fix .001/.002 naming suffixes automatically</li>
+                <li>Remove loose vertices and edges</li>
+                <li>Apply all transforms at once</li>
+                <li>Detailed scene statistics popup</li>
+            </ul>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-scene-cleaner" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/l/scene-cleaner-pro" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Batch Renamer Pro</h2>
+            <p>Rename objects, materials, collections, and mesh data in bulk.</p>
+            <ul class="features">
+                <li>Find & Replace with regex support</li>
+                <li>Add/Remove prefix and suffix</li>
+                <li>Sequential numbering (Wall_001, Wall_002...)</li>
+                <li>Case conversion (UPPER, lower, Title, snake_case, CamelCase)</li>
+                <li>Clean .001 suffixes, sync mesh data names</li>
+                <li>"Selected Only" toggle + preview popup</li>
+            </ul>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-batch-renamer" class="btn-github">GitHub (Free)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Material Manager Pro</h2>
+            <p>Tame material chaos — merge duplicates, batch edit, replace across objects.</p>
+            <ul class="features">
+                <li>Merge duplicate materials (Wood.001 → Wood)</li>
+                <li>Batch set base color, roughness, metallic</li>
+                <li>Replace material across all objects</li>
+                <li>Select objects by material</li>
+                <li>Convert legacy shaders to Principled BSDF</li>
+                <li>Material usage statistics</li>
+            </ul>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-material-manager" class="btn-github">GitHub (Free)</a>
+            </div>
+        </div>
+
+        <div class="addon bundle">
+            <h2>Vesper Tools Bundle</h2>
+            <p>All 3 addons in one download. Save 20%.</p>
+            <div class="price">$12 <s>$15</s></div>
+            <ul class="features">
+                <li>Scene Cleaner Pro</li>
+                <li>Batch Renamer Pro</li>
+                <li>Material Manager Pro</li>
+                <li>Future updates included</li>
+            </ul>
+            <div class="links">
+                <a href="#" class="btn-gumroad">Coming Soon on Gumroad</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made by <a href="https://github.com/vesper-astrena">Vesper Tools</a> · Compatible with Blender 3.6+</p>
+        </footer>
+    </div>
+</body>
+</html>
