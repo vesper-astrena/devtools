@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vesper Tools — Free Blender Addons</title>
-    <meta name="description" content="3 free open-source Blender addons: Scene Cleaner Pro, Batch Renamer Pro, Material Manager Pro. One-click cleanup, bulk renaming, material management.">
+    <title>Vesper Tools — 10 Free Blender Addons</title>
+    <meta name="description" content="10 free open-source Blender addons: scene cleanup, batch renaming, material management, UV tools, collection organizer, batch export, modifier manager, viewport controls, lighting presets, mesh QC.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
@@ -13,9 +13,10 @@
         .subtitle { color: #888; font-size: 1.2rem; margin-bottom: 3rem; }
         .addon { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
         .addon h2 { color: #4fc3f7; margin-bottom: 0.5rem; font-size: 1.5rem; }
+        .addon .ops { color: #4caf50; font-size: 0.85rem; margin-bottom: 0.5rem; }
         .addon p { color: #aaa; margin-bottom: 1rem; }
         .features { list-style: none; margin-bottom: 1.5rem; }
-        .features li { padding: 0.3rem 0; }
+        .features li { padding: 0.2rem 0; }
         .features li::before { content: "✓ "; color: #4caf50; font-weight: bold; }
         .links { display: flex; gap: 1rem; flex-wrap: wrap; }
         .links a { display: inline-block; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
@@ -27,27 +28,22 @@
         .bundle h2 { color: #fff; }
         .price { font-size: 1.3rem; color: #4caf50; font-weight: bold; margin: 1rem 0; }
         .price s { color: #666; font-size: 1rem; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .grid .features li { font-size: 0.9rem; }
         footer { text-align: center; color: #555; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #222; }
         footer a { color: #4fc3f7; text-decoration: none; }
-        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .container { padding: 1rem; } }
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .container { padding: 1rem; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Vesper Tools for Blender</h1>
-        <p class="subtitle">3 free, open-source addons to clean up your workflow. Single Python files, no dependencies.</p>
+        <p class="subtitle">10 free, open-source addons to speed up your workflow. Single Python files, zero dependencies.</p>
 
         <div class="addon">
             <h2>Scene Cleaner Pro</h2>
-            <p>One-click scene cleanup — stop wasting time on manual housekeeping.</p>
-            <ul class="features">
-                <li>Purge ALL unused datablocks across 24+ categories</li>
-                <li>Remove empty collections (recursive check)</li>
-                <li>Fix .001/.002 naming suffixes automatically</li>
-                <li>Remove loose vertices and edges</li>
-                <li>Apply all transforms at once</li>
-                <li>Detailed scene statistics popup</li>
-            </ul>
+            <div class="ops">15 operations</div>
+            <p>One-click scene cleanup — purge unused data, remove empties, fix names, delete loose geometry.</p>
             <div class="links">
                 <a href="https://github.com/vesper-astrena/blender-scene-cleaner" class="btn-github">GitHub (Free)</a>
                 <a href="https://vesperfinch.gumroad.com/l/scene-cleaner-pro" class="btn-gumroad">Gumroad ($5+)</a>
@@ -56,53 +52,121 @@
 
         <div class="addon">
             <h2>Batch Renamer Pro</h2>
-            <p>Rename objects, materials, collections, and mesh data in bulk.</p>
-            <ul class="features">
-                <li>Find & Replace with regex support</li>
-                <li>Add/Remove prefix and suffix</li>
-                <li>Sequential numbering (Wall_001, Wall_002...)</li>
-                <li>Case conversion (UPPER, lower, Title, snake_case, CamelCase)</li>
-                <li>Clean .001 suffixes, sync mesh data names</li>
-                <li>"Selected Only" toggle + preview popup</li>
-            </ul>
+            <div class="ops">12 operations</div>
+            <p>Rename objects, materials, collections in bulk. Find/replace, regex, sequential numbering, case conversion.</p>
             <div class="links">
                 <a href="https://github.com/vesper-astrena/blender-batch-renamer" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
             </div>
         </div>
 
         <div class="addon">
             <h2>Material Manager Pro</h2>
-            <p>Tame material chaos — merge duplicates, batch edit, replace across objects.</p>
-            <ul class="features">
-                <li>Merge duplicate materials (Wood.001 → Wood)</li>
-                <li>Batch set base color, roughness, metallic</li>
-                <li>Replace material across all objects</li>
-                <li>Select objects by material</li>
-                <li>Convert legacy shaders to Principled BSDF</li>
-                <li>Material usage statistics</li>
-            </ul>
+            <div class="ops">13 operations</div>
+            <p>Merge duplicate materials, batch edit properties, replace across objects. Tame the .001 explosion.</p>
             <div class="links">
                 <a href="https://github.com/vesper-astrena/blender-material-manager" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>UV Tools Pro</h2>
+            <div class="ops">14 operations</div>
+            <p>Batch unwrap, UV checker overlay, scale/align UVs, island management. Faster texturing prep.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-uv-tools" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Collection Organizer Pro</h2>
+            <div class="ops">12 operations</div>
+            <p>Auto-sort objects into collections by type, material, or name prefix. Batch visibility, flatten/merge.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-collection-organizer" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Quick Exporter Pro</h2>
+            <div class="ops">10 operations</div>
+            <p>One-click FBX/OBJ/glTF batch export. Export selected individually, by collection, or all visible.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-quick-exporter" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Modifier Stack Manager</h2>
+            <div class="ops">13 operations</div>
+            <p>Copy modifiers between objects, apply/remove by type, sort stacks, toggle visibility in batch.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-modifier-manager" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Viewport Toolbox</h2>
+            <div class="ops">14 operations</div>
+            <p>Camera management, shading toggles, focal length presets (24-135mm), isolate selection, screenshots.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-viewport-toolbox" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Quick Lighting Studio</h2>
+            <div class="ops">12 operations</div>
+            <p>One-click lighting: three-point, studio, product shot, dramatic, outdoor. Batch intensity/color controls.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-quick-lighting" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
+            </div>
+        </div>
+
+        <div class="addon">
+            <h2>Mesh Analysis Toolkit</h2>
+            <div class="ops">12 operations</div>
+            <p>Detect non-manifold, n-gons, flipped normals, loose verts. One-click fixes. Export QC reports.</p>
+            <div class="links">
+                <a href="https://github.com/vesper-astrena/blender-mesh-analysis" class="btn-github">GitHub (Free)</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Gumroad ($5+)</a>
             </div>
         </div>
 
         <div class="addon bundle">
-            <h2>Vesper Tools Bundle</h2>
-            <p>All 3 addons in one download. Save 20%.</p>
-            <div class="price">$12 <s>$15</s></div>
-            <ul class="features">
-                <li>Scene Cleaner Pro</li>
-                <li>Batch Renamer Pro</li>
-                <li>Material Manager Pro</li>
-                <li>Future updates included</li>
-            </ul>
+            <h2>Vesper Tools Bundle — All 10 Addons</h2>
+            <p>Every addon in one download. 127 total operations.</p>
+            <div class="price">$12+ <s>$50</s></div>
+            <div class="grid">
+                <ul class="features">
+                    <li>Scene Cleaner Pro</li>
+                    <li>Batch Renamer Pro</li>
+                    <li>Material Manager Pro</li>
+                    <li>UV Tools Pro</li>
+                    <li>Collection Organizer Pro</li>
+                </ul>
+                <ul class="features">
+                    <li>Quick Exporter Pro</li>
+                    <li>Modifier Stack Manager</li>
+                    <li>Viewport Toolbox</li>
+                    <li>Quick Lighting Studio</li>
+                    <li>Mesh Analysis Toolkit</li>
+                </ul>
+            </div>
             <div class="links">
-                <a href="#" class="btn-gumroad">Coming Soon on Gumroad</a>
+                <a href="https://vesperfinch.gumroad.com/" class="btn-gumroad">Get Bundle on Gumroad ($12+)</a>
             </div>
         </div>
 
         <footer>
-            <p>Made by <a href="https://github.com/vesper-astrena">Vesper Tools</a> · Compatible with Blender 3.6+</p>
+            <p>Made by <a href="https://github.com/vesper-astrena">Vesper Tools</a> · All addons: Blender 3.6+ · MIT License</p>
         </footer>
     </div>
 </body>
